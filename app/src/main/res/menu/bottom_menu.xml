@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_chat"/>
     <item
         android:id="@+id/myChildren"
-        android:title="@string/my_children_title"
+        android:title="@string/camps_on_map_title"
         android:icon="@drawable/ic_map"/>
     <item
         android:id="@+id/account"

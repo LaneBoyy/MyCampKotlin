@@ -1,6 +1,7 @@
 package ru.laneboy.firsthacaton.presentation
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
@@ -10,7 +11,10 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import ru.laneboy.firsthacaton.R
+import ru.laneboy.firsthacaton.presentation.mainscreen.CampsOnMapFragment
 
 
 class StartScreenActivity : AppCompatActivity() {
@@ -19,9 +23,11 @@ class StartScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_start_screen)
 
         removeStatusBar()
+        requestLocationPermission()
         setTextGradient()
         clickOnSignIn()
         clickOnSignUp()
+        clickOnWithoutSignUp()
     }
 
     private fun removeStatusBar() {
@@ -35,6 +41,7 @@ class StartScreenActivity : AppCompatActivity() {
     private fun clickOnSignUp() {
         findViewById<LinearLayout>(R.id.llSignUp).setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
+            intent.putExtra(START_INTENT_KEY, INTENT_SIGN)
             startActivity(intent)
         }
     }
@@ -42,6 +49,15 @@ class StartScreenActivity : AppCompatActivity() {
     private fun clickOnSignIn() {
         findViewById<LinearLayout>(R.id.llSingIn).setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
+            intent.putExtra(START_INTENT_KEY, INTENT_SIGN)
+            startActivity(intent)
+        }
+    }
+
+    private fun clickOnWithoutSignUp() {
+        findViewById<TextView>(R.id.tvWithoutSingUp).setOnClickListener {
+            val intent = Intent(this, MainScreenActivity::class.java)
+            intent.putExtra(START_INTENT_KEY, INTENT_SIGN_NOT)
             startActivity(intent)
         }
     }
@@ -63,6 +79,26 @@ class StartScreenActivity : AppCompatActivity() {
         )
 
         textView.paint.shader = textShader
+    }
 
+    private fun requestLocationPermission() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                "android.permission.ACCESS_FINE_LOCATION"
+            )
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf("android.permission.ACCESS_FINE_LOCATION"),
+                CampsOnMapFragment.PERMISSIONS_REQUEST_FINE_LOCATION
+            )
+        }
+    }
+
+    companion object {
+        const val START_INTENT_KEY = "START INTENT"
+        const val INTENT_SIGN = "TRUE"
+        const val INTENT_SIGN_NOT = "FALSE"
     }
 }

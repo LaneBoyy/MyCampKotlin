@@ -47,7 +47,7 @@ class CampListFragment : Fragment() {
     }
 
     private fun fillRecyclerView(){
-        viewModel.campList.observe(this) {
+        viewModel.campList.observe(viewLifecycleOwner) {
             campListAdapter?.submitList(it)
         }
     }
@@ -81,5 +81,6 @@ class CampListFragment : Fragment() {
         const val INTENT_CITY_OF_CAMP = "CITY"
         const val INTENT_COAST_CAMP = "COAST"
         const val INTENT_PICTURE_CAMP = "PICTURE"
+
     }
 }

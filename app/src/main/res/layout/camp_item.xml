@@ -65,7 +65,7 @@
 
                 <TextView
                     android:id="@+id/tvTypeCamp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/stem_semi_light"
                     android:text="Летний стационарный лагерь"
@@ -132,7 +132,7 @@
                 android:fontFamily="@font/stem_medium"
                 android:text="33.560 руб"
                 android:textColor="@color/main_light_blue"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText" />

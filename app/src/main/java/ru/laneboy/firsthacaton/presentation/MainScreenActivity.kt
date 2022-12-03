@@ -9,13 +9,15 @@ import ru.laneboy.firsthacaton.databinding.ActivityMainScreenBinding
 import ru.laneboy.firsthacaton.presentation.mainscreen.AccountFragment
 import ru.laneboy.firsthacaton.presentation.mainscreen.CampListFragment
 import ru.laneboy.firsthacaton.presentation.mainscreen.ChatFragment
-import ru.laneboy.firsthacaton.presentation.mainscreen.MyChildrenFragment
+import ru.laneboy.firsthacaton.presentation.mainscreen.CampsOnMapFragment
 
 class MainScreenActivity : AppCompatActivity() {
 
     private val binding by lazy {
         ActivityMainScreenBinding.inflate(layoutInflater)
     }
+
+    private val mapFragment = CampsOnMapFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +38,7 @@ class MainScreenActivity : AppCompatActivity() {
                     setFragment(ChatFragment.newInstance())
                 }
                 R.id.myChildren -> {
-                    setFragment(MyChildrenFragment.newInstance())
+                    setFragment(mapFragment)
                 }
                 R.id.account -> {
                     setFragment(AccountFragment.newInstance())

@@ -1,6 +1,7 @@
 package ru.laneboy.firsthacaton.presentation
 
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -21,10 +22,19 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sing_up)
 
         clickOnBtnSignUp()
+        removeStatusBar()
+    }
+
+    private fun removeStatusBar() {
+        val w = window
+        w.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
     }
 
     private fun clickOnBtnSignUp() {
-        findViewById<AppCompatButton>(R.id.btnStart).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.btnSignUp).setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val registrationItem = SignUpDataResponse(
                     "ljjjjjaks@gmail.com",
@@ -39,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
                     apiService.singUp(registrationItem)
                 } catch (e: Exception){
                     withContext(Dispatchers.Main){
-                        Toast.makeText(this@SignUpActivity, "Алло, пароли чекни, почему они разные?", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SignUpActivity, R.string.sign_up_error_password, Toast.LENGTH_SHORT).show()
                     }
                 }
             }

@@ -23,10 +23,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="35dp"
             android:fontFamily="@font/stem_medium"
-            android:text="Авторизация"
+            android:text="@string/sign_in_text"
             android:textColor="@color/white"
-            android:textSize="26sp"
-            tools:ignore="HardcodedText" />
+            android:textSize="26sp" />
 
         <EditText
             android:id="@+id/etEmail"
@@ -37,11 +36,10 @@
             android:layout_marginEnd="35dp"
             android:background="@drawable/back_with_corners"
             android:fontFamily="@font/stem_light"
-            android:hint="E-mail"
-            android:paddingStart="20dp"
+            android:hint="@string/e_mail_hint"
+            android:paddingHorizontal="20dp"
             android:textColorHint="@color/blue"
-            android:textSize="15sp"
-            tools:ignore="HardcodedText,RtlSymmetry" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -52,11 +50,10 @@
             android:layout_marginEnd="35dp"
             android:background="@drawable/back_with_corners"
             android:fontFamily="@font/stem_light"
-            android:hint="Пароль"
-            android:paddingStart="20dp"
+            android:hint="@string/password_hint"
+            android:paddingHorizontal="20dp"
             android:textColorHint="@color/blue"
-            android:textSize="15sp"
-            tools:ignore="HardcodedText,RtlSymmetry" />
+            android:textSize="15sp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignIn"
@@ -68,11 +65,10 @@
             android:layout_marginEnd="110dp"
             android:background="@drawable/btn_back"
             android:fontFamily="@font/stem_semi_light"
-            android:text="Войти"
+            android:text="@string/sing_in"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="15sp"
-            tools:ignore="HardcodedText" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

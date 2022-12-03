@@ -6,7 +6,7 @@ import ru.laneboy.firsthacaton.CampItem
 import ru.laneboy.firsthacaton.CampListRepository
 import ru.laneboy.firsthacaton.R
 
-object CampListRepositoryImpl: CampListRepository {
+object CampListRepositoryImpl : CampListRepository {
 
     private val campListLD = MutableLiveData<List<CampItem>>()
     private val campList = sortedSetOf<CampItem>({ p0, p1 -> p0.id.compareTo(p1.id) })
@@ -14,8 +14,38 @@ object CampListRepositoryImpl: CampListRepository {
     private var autoIncrementId = 0
 
     init {
-        for (i in 0 until 3) {
-            val item = CampItem("Хуй", "Хуевый", "Чернобыль", "Дохуя", R.drawable.sun_coutry)
+        val item0 = CampItem(
+            "Солнечная страна",
+            "Летний стационарный лагерь",
+            "г. Оренбург",
+            "35.560 руб",
+            R.drawable.sun_coutry
+        )
+        val item1 = CampItem(
+            "Летняя сказка",
+            "Летний стационарный лагерь",
+            "г. Оренбург",
+            "32.130 руб",
+            R.drawable.summer_tale
+        )
+        val item2 = CampItem(
+            "Авангарг",
+            "Cтационарный лагерь",
+            "г. Оренбург",
+            "42.760 руб",
+            R.drawable.avangard
+        )
+        addCampItem(item0)
+        addCampItem(item1)
+        addCampItem(item2)
+        for (i in 0 until 2) {
+            val item = CampItem(
+                "Солнечная страна",
+                "Cтационарный лагерь",
+                "г. Оренбург",
+                "35.560 руб",
+                R.drawable.sun_coutry
+            )
             addCampItem(item)
         }
     }

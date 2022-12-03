@@ -3,8 +3,20 @@
     <string name="choose_action">Выберите действие</string>
     <string name="catalog_title">Каталог</string>
     <string name="chat_title">Чаты</string>
-    <string name="my_children_title">Мои дети</string>
+    <string name="camps_on_map_title">Лагеря</string>
     <string name="my_account_title">ЛК</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_sign_in_google">Войти с помощью Google</string>
+    <string name="sing_in">Войти</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="without_sign_up">Хочу продолжить без регистрации</string>
+    <string name="sign_in_text">Авторизация</string>
+    <string name="e_mail_hint">E-mail</string>
+    <string name="password_hint">Пароль</string>
+    <string name="password_conf_hint">Подтвердите пароль</string>
+    <string name="first_name_hint">Имя</string>
+    <string name="last_name_hint">Фамилия</string>
+    <string name="middle_name_hint">Отчество</string>
+    <string name="sign_up_text">Регистрация</string>
+    <string name="sign_up_btn">Зарегистрироваться</string>
+    <string name="sign_up_error_password">Введенные пароли не совпадают</string>
 </resources>
