@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.FirstHacaton" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.FirstHacaton" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,5 +13,24 @@
         <item name="android:statusBarColor">@color/background_blue</item>
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
+        <item name="bottomNavigationStyle">@style/BottomMenuStyle</item>
+    </style>
+
+    <style name="BottomMenuStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@drawable/bottom_menu_back</item>
+        <item name="itemRippleColor">@android:color/transparent</item>
+        <item name="labelVisibilityMode">selected</item>
+        <item name="itemIconTint">@drawable/bottom_menu_item_tint</item>
+        <item name="itemTextColor">@drawable/bottom_menu_item_tint</item>
+        <item name="itemTextAppearanceActive">@style/BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationView.Inactive</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="TextAppearance.AppCompat.Caption">
+        <item name="fontFamily">@font/stem_medium</item>
+    </style>
+
+    <style name="BottomNavigationView.Inactive" parent="TextAppearance.AppCompat.Caption">
+        <item name="fontFamily">@font/stem_medium</item>
     </style>
 </resources>

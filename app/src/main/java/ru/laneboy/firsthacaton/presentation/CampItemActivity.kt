@@ -1,4 +1,4 @@
-package ru.laneboy.firsthacaton.activities
+package ru.laneboy.firsthacaton.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

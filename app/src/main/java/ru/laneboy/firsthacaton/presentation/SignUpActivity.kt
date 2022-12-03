@@ -1,4 +1,4 @@
-package ru.laneboy.firsthacaton.activities
+package ru.laneboy.firsthacaton.presentation
 
 import android.os.Bundle
 import android.widget.Toast

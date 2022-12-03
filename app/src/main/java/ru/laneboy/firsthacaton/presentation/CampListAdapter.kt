@@ -1,4 +1,4 @@
-package ru.laneboy.firsthacaton.activities
+package ru.laneboy.firsthacaton.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -26,7 +26,7 @@ class CampListAdapter: ListAdapter<CampItem, CampItemViewHolder>(CampItemDiffCal
             tvCityForCamp.text = campItem.cityForCamp
             tvTypeCamp.text = campItem.typeCamp
             tvCoastOfCamp.text = campItem.coastOfCamp
-            view.setOnClickListener {
+            acBtnDetails.setOnClickListener {
                 onCampItemClickListener?.invoke(campItem)
             }
         }

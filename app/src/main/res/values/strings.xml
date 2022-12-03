@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">FirstHacaton</string>
     <string name="choose_action">Выберите действие</string>
+    <string name="catalog_title">Каталог</string>
+    <string name="chat_title">Чаты</string>
+    <string name="my_children_title">Мои дети</string>
+    <string name="my_account_title">ЛК</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

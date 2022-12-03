@@ -3,6 +3,7 @@ package ru.laneboy.firsthacaton
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 
 class CampItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -12,4 +13,5 @@ class CampItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     val tvCoastOfCamp = view.findViewById<TextView>(R.id.tvCoastOfCamp)
     val tvCityForCamp = view.findViewById<TextView>(R.id.tvCityForCamp)
     val ivPictureCamp = view.findViewById<ImageView>(R.id.ivPictureCamp)
+    val acBtnDetails = view.findViewById<AppCompatButton>(R.id.apBtnDetail)
 }
