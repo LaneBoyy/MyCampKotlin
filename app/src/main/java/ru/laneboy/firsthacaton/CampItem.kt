@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 data class CampItem(
     val nameCamp: String,
     val typeCamp: String,
+    val cityForCamp: String,
     val coastOfCamp: String,
 
     @DrawableRes

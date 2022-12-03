@@ -53,7 +53,7 @@
         app:tint="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_camp_list"
+        android:id="@+id/rvCampList"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         tools:listitem="@layout/camp_item"
