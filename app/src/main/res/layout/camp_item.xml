@@ -2,21 +2,23 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvId"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
-    android:layout_marginTop="4dp"
+    android:layout_marginTop="10dp"
     android:layout_marginEnd="8dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="6dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivPictureCamp"
             android:layout_width="wrap_content"
             android:layout_height="120dp"
             android:background="@drawable/iv_back"
@@ -29,16 +31,17 @@
             tools:ignore="UnusedAttribute" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2">
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPictureCamp">
 
             <TextView
+                android:id="@+id/tvNameCamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/stem_semi_light"
@@ -55,14 +58,15 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Тип: "
-                    android:textSize="10sp"
-                    android:textColor="@color/main_light_blue"
-                    android:fontFamily="@font/stem_medium"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/stem_medium"
+                    android:text="Тип: "
+                    android:textColor="@color/main_light_blue"
+                    android:textSize="10sp"
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:id="@+id/tvTypeCamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/stem_semi_light"
@@ -80,14 +84,15 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:text="Город: "
-                    android:textSize="10sp"
-                    android:textColor="@color/main_light_blue"
-                    android:fontFamily="@font/stem_medium"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/stem_medium"
+                    android:text="Город: "
+                    android:textColor="@color/main_light_blue"
+                    android:textSize="10sp"
                     tools:ignore="HardcodedText" />
 
                 <TextView
+                    android:id="@+id/tvCityForCamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/stem_semi_light"
@@ -100,7 +105,57 @@
 
         </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/ivPictureCamp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/stem_medium"
+                android:text="Стоимость: "
+                android:textColor="@color/main_light_blue"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCoastOfCamp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvCoastOfCamp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tvCoastOfCamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/stem_medium"
+                android:text="33.560 руб"
+                android:textColor="@color/main_light_blue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/apBtnDetail"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_back_oval"
+                android:fontFamily="@font/stem_medium"
+                android:text="Подробнее"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCoastOfCamp"
+                tools:ignore="HardcodedText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
