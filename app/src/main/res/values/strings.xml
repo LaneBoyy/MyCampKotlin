@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FirstHacaton</string>
+    <string name="choose_action">Выберите действие</string>
+</resources>
