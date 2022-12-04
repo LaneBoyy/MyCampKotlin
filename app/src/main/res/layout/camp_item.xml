@@ -45,8 +45,7 @@
                 android:fontFamily="@font/stem_semi_light"
                 android:text="Солнечная страна"
                 android:textColor="@color/main_light_blue"
-                android:textSize="18sp"
-                tools:ignore="HardcodedText" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

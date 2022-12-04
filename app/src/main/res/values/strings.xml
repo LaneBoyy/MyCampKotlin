@@ -19,4 +19,8 @@
     <string name="sign_up_text">Регистрация</string>
     <string name="sign_up_btn">Зарегистрироваться</string>
     <string name="sign_up_error_password">Введенные пароли не совпадают</string>
+    <string name="coast">Цена</string>
+    <string name="rate">Очень здорово! Ребенку понравилось, хорошая атмосфера и интересная программа!!!</string>
+    <string name="make_rate">Оставить отзыв</string>
+    <string name="Bron">Забронировать</string>
 </resources>

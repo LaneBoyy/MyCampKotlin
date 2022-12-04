@@ -17,7 +17,7 @@ object CampListRepositoryImpl : CampListRepository {
         val item0 = CampItem(
             "Солнечная страна",
             "Летний стационарный лагерь",
-            "г. Оренбург",
+            "с. Ташла",
             "35.560 руб",
             R.drawable.sun_coutry
         )
