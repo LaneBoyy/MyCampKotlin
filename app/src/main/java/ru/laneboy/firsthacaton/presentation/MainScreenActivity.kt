@@ -48,6 +48,12 @@ class MainScreenActivity : AppCompatActivity() {
         }
     }
 
+    fun startChatFragment() {
+        binding.bn.selectedItemId = R.id.chats
+    }
+
+
+
     private fun setFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)

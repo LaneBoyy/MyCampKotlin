@@ -1,16 +1,19 @@
 package ru.laneboy.firsthacaton.presentation.mainscreen
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import ru.laneboy.firsthacaton.MainViewModel
 import ru.laneboy.firsthacaton.databinding.FragmentCampListBinding
 import ru.laneboy.firsthacaton.presentation.CampItemActivity
 import ru.laneboy.firsthacaton.presentation.CampListAdapter
+import ru.laneboy.firsthacaton.presentation.MainScreenActivity
 
 class CampListFragment : Fragment() {
 
@@ -22,7 +25,17 @@ class CampListFragment : Fragment() {
 
     private var _binding: FragmentCampListBinding? = null
     private val binding: FragmentCampListBinding
-    get() = _binding?: throw RuntimeException("FragmentCampListBinding = null")
+        get() = _binding ?: throw RuntimeException("FragmentCampListBinding = null")
+
+    private val activityForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                val isStartChats = it.data?.getBooleanExtra(CampItemActivity.CONTACT_TAG, false)
+                if (isStartChats != null || isStartChats == true) {
+                    (requireActivity() as MainScreenActivity).startChatFragment()
+                }
+            }
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +43,7 @@ class CampListFragment : Fragment() {
     ): View? {
         _binding = FragmentCampListBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -44,7 +58,7 @@ class CampListFragment : Fragment() {
         _binding = null
     }
 
-    private fun fillRecyclerView(){
+    private fun fillRecyclerView() {
         viewModel.campList.observe(viewLifecycleOwner) {
             campListAdapter?.submitList(it)
         }
@@ -59,14 +73,14 @@ class CampListFragment : Fragment() {
     }
 
     private fun setupClickListener() {
-         campListAdapter?.onCampItemClickListener = {
+        campListAdapter?.onCampItemClickListener = {
             val intent = Intent(requireActivity(), CampItemActivity::class.java)
             intent.putExtra(INTENT_NAME_CAMP, it.nameCamp)
             intent.putExtra(INTENT_TYPE_CAMP, it.typeCamp)
             intent.putExtra(INTENT_CITY_OF_CAMP, it.cityForCamp)
             intent.putExtra(INTENT_COAST_CAMP, it.coastOfCamp)
             intent.putExtra(INTENT_PICTURE_CAMP, it.pictureCamp)
-            startActivity(intent)
+            activityForResult.launch(intent)
         }
     }
 

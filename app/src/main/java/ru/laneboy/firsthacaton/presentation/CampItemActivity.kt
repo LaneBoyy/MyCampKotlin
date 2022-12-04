@@ -1,10 +1,12 @@
 package ru.laneboy.firsthacaton.presentation
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import ru.laneboy.firsthacaton.R
 import ru.laneboy.firsthacaton.presentation.mainscreen.CampListFragment
 import ru.laneboy.firsthacaton.presentation.mainscreen.CampListFragment.Companion.INTENT_CITY_OF_CAMP
@@ -34,5 +36,15 @@ class CampItemActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvTypeCampItem).text = intent.getStringExtra(INTENT_TYPE_CAMP)
         findViewById<TextView>(R.id.tvCityCampItem).text = intent.getStringExtra(INTENT_CITY_OF_CAMP)
         findViewById<TextView>(R.id.tvCoastOfCampItem).text = intent.getStringExtra(INTENT_COAST_CAMP)
+        findViewById<AppCompatButton>(R.id.btnContact).setOnClickListener {
+            setResult(Activity.RESULT_OK, Intent().apply {
+                putExtra(CONTACT_TAG, true)
+            })
+            finish()
+        }
+    }
+
+    companion object{
+        const val CONTACT_TAG = "contact_tag"
     }
 }

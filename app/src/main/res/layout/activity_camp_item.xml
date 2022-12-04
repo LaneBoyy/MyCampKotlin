@@ -263,6 +263,7 @@
             app:layout_constraintTop_toBottomOf="@+id/acBtnMakeRate" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContact"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
