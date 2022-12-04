@@ -23,4 +23,9 @@
     <string name="rate">Очень здорово! Ребенку понравилось, хорошая атмосфера и интересная программа!!!</string>
     <string name="make_rate">Оставить отзыв</string>
     <string name="Bron">Забронировать</string>
+    <string name="call">Связаться</string>
+    <string name="role_parent">Родитель</string>
+    <string name="sign_up_successfully">Регистрация завершена. На вашу почту отправлено письмо с подтверждением.</string>
+    <string name="error_sign_in">Неверный логин или пароль</string>
+    <string name="error_empty_fields">Оба поля должны быть заполнены</string>
 </resources>
