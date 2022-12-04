@@ -28,4 +28,9 @@
     <string name="sign_up_successfully">Регистрация завершена. На вашу почту отправлено письмо с подтверждением.</string>
     <string name="error_sign_in">Неверный логин или пароль</string>
     <string name="error_empty_fields">Оба поля должны быть заполнены</string>
+    <string name="account_not_found">Аккаунт не зарегистрирован</string>
+    <string name="btn_text_calls">Поданные заявки</string>
+    <string name="unknown_account">Здесь будут отображаться все заполненные данные после регистрации</string>
+    <string name="message">Чаты и возможность писать сообщения доступны после регистрации</string>
+    <string name="go_to_sign_up">Перейти к регистрации</string>
 </resources>
